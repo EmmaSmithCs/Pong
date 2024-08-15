@@ -16,17 +16,20 @@ public class PongGame extends JFrame {
         // Set the window to close when the close button is clicked
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Set the window to be visible
-        setVisible(true);
+        // Create a new GamePanel object
+        GamePanel gamePanel = new GamePanel();
+        
+        // Add the GamePanel to the JFrame
+        add(gamePanel);
+        
+        // Request focus on the GamePanel to ensure it receives key events
+        gamePanel.requestFocusInWindow();
 
         // Center the window on the screen
         setLocationRelativeTo(null);
 
-        // Create a new GamePanel object
-        add(new GamePanel());
-        
+        // Set the window to be visible
         setVisible(true);
-
     }
 
     public static void main(String[] args) {
@@ -34,4 +37,3 @@ public class PongGame extends JFrame {
         new PongGame();
     }
 }
-
